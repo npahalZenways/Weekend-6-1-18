@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/*tag name selector*/
+		p{
+			color: blue;
+		}
+		p{
+			color: yellow;
+		}
+		#selected{
+			color: grey;
+		}
+		p.blue{
+			color: blue;
+		}
+		/*all p tags which lie inside a div*/
+		div#mydiv p{
+			color: cyan
+		}
+		/*select all those p tags which are placed immediately after div with class = mydiv*/
+		div.mydiv + p{
+			color: yellow;
+		}
+		/* > selects all child elements*/
+		div.mydiv > div > p{
+			font-size: 30px;
+		}
+		/*attribute selector*/
+		/*select all elements with href attribute present*/
+		[href]{
+			color: pink;
+			font-size: 25px;
+		}
+		[href='#']{
+			color: green;
+			text-decoration: none;
+		}
+		*{
+			/*select all elements*/
+		}
+		p:hover{
+			background-color: yellow;
+		}
+		a:active{
+			color: red;
+		}
+		a:visited{
+			color: grey;
+		}/*
+		div.mydiv > div > p:last-child{
+			color: yellow
+		}*/
+		div.mydiv > div > p:nth-child(even){
+			color: yellow
+		}
+	</style>
+</head>
+<body>
+	<!-- inline style -->
+	<p style="color: red !important">This is a paragraph</p>
+
+	<p>Para 2</p>
+	<p id="selected">Para 3</p>
+	<p class="blue">Para 4</p>
+	<p class="blue">Para 5</p>
+	<h4 class="blue">Heading tag</h4>
+
+	<div class="mydiv">
+		<p>P1</p>
+		<p>P2</p>
+		<p>P3</p>
+		<p>P4</p>
+		<div>
+			<p>pdiv1</p>
+			<p>pdiv2</p>
+			<p>pdiv3</p>
+			<p>pdiv4</p>
+			<p>pdiv4</p>
+			<p>pdiv4</p>
+			<p>pdiv4</p>
+			<p>pdiv4</p>
+			<p>pdiv4</p>
+		</div>
+	</div>
+	<p>Yellow 1 immediately after #myDiv</p>
+	<p>Yellow</p>
+	<div class="mydiv"></div>
+	<p>Yellow 1 immediately after #myDiv</p>
+	<a href="http://www.google.com" target="_blank">This is link</a>
+	<a href="#">This is link</a>
+	<a href="#one">This is link</a>
+	<a>This is link</a>
+
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</body>
+</html>
