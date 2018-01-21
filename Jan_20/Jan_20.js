@@ -1,6 +1,7 @@
 var num;
 var key;
 var arr;
+var dates;
 var strArr;
 var isTrue = true;
 var obj = {
@@ -12,10 +13,11 @@ xyz = 10;
 xyz = '';
 xyz = true;
 var jsArr = [1];
-var tup;
+var tup; //tuple
 tup = [1, '', true, {}, 'hgf'];
 tup[0] = 1;
 tup.push(1);
+//enum
 var Color;
 (function (Color) {
     Color[Color["red"] = 5] = "red";
@@ -30,6 +32,7 @@ function abc(mynumber) {
     return 0;
 }
 abc(87654);
+// unions
 function getCompletePadding(padding) {
     if (typeof padding == 'number')
         console.log(padding + 'px');
@@ -42,6 +45,7 @@ function getCompletePadding(padding) {
 getCompletePadding(10);
 getCompletePadding('20px');
 getCompletePadding(true);
+//generics
 function gen(params) {
     return params;
 }
@@ -50,4 +54,3 @@ gen('sdfg');
 gen(true);
 var genArray;
 var genStrArray;
-//# sourceMappingURL=Jan_20.js.map

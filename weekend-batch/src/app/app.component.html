@@ -1,0 +1,62 @@
+<!-- One-way binding -->
+
+<!-- Interpolation -->
+<p>Welcome to {{title}}</p>
+
+<!-- Event binding -->
+<button (click)="title = 'app'; printInConsole()">Click</button>
+
+<!-- Property binding -->
+<button (click)="source = 'http://smalldata.io/img/sdl_logo.png'">Change image</button>
+<img [src]="source">
+
+<p [style.color]="sty">This is a para</p>
+
+<!-- Local template variable -->
+<input type="text" #name (keydown)="valueFromInput = name.value"> {{valueFromInput}}
+
+<!-- End of one-way binding -->
+
+<!-- Two-way binding -->
+<br><br>
+<input type="text" [(ngModel)]="valueFromInput" placeholder="value">
+
+<!-- End of two-way binding -->
+
+<!-- In-built directives -->
+
+<!-- *ngIf directive -->
+<div *ngIf="valueFromInput == 'app'; else falseTemp">
+  <p>This is true</p>
+</div>
+<ng-template #falseTemp>
+  <div> 
+    <p>This is false</p>
+  </div>
+</ng-template>
+<br><br>
+
+<!-- *ngFor directive -->
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
+  <tr *ngFor="let obj of myArray; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{obj.name}}</td>
+    <td>{{obj.phone}}</td>
+  </tr>
+</table>
+
+<!-- [ngClass] directive  {key = class : value = condition}-->
+<p [ngClass]="{'appClass': valueFromInput == 'app' && title == 'app', 'falseClass': valueFromInput != 'app', 'default': true}">Paragraph</p>
+<p [class]="title">My class</p>
+
+<!-- [ngSwitch directive] -->
+<div [ngSwitch]="valueFromInput">
+  <div *ngSwitchCase = "'app'">App</div>
+  <div *ngSwitchCase = "'My application'">My App</div>
+  <div *ngSwitchDefault>Default</div>
+</div>

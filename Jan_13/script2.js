@@ -59,20 +59,20 @@ consumeCallback(function(param){
 
 //promises
 var testingString = "this is k";
-var myPromise = new Promise(function(resolve, reject){
+var myPromise = new Promise(function(a, b){
 	if(testingString == 'this is ok'){
 		setTimeout(function(){
-			resolve('resolved text')
+			a('resolved text') //this is a resolve call
 		}, 3000);	
 	} else {
 		setTimeout(function(){
-			reject('rejected text')
+			b('rejected text') //this is a reject call
 		}, 2000);
 	}
 });
 // then will be called when promise is resolved, catch will be called when promise is rejected
-myPromise.then(function(response){
-	console.log('then is called', response)
-}).catch(function(error){
-	console.log('catch is called', error)
+myPromise.then(function(res1){
+	console.log('then is called', res1)
+}).catch(function(res2){
+	console.log('catch is called', res2)
 })

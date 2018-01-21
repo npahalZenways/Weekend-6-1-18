@@ -1,6 +1,7 @@
 var num : number;
 var key : string;
 var arr : [number];
+var dates : number[];
 var strArr : [string];
 var isTrue : boolean = true;
 var obj : object = {
