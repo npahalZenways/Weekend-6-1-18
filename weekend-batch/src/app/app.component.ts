@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'root',
+  selector: 'app-component',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -33,5 +33,8 @@ export class AppComponent {
     //     break;
     //   default:
     // }
+  }
+  receiveInputFromChild(e){
+    console.log(e);
   }
 }

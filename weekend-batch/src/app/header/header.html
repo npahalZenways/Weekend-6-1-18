@@ -1,0 +1,39 @@
+
+<div>
+<p>This is my external template</p>
+</div>
+
+{{receivedName}}
+
+<button (click)="send()">Send data</button>
+
+
+<form #myForm="ngForm" (ngSubmit)="formData()">
+    <div>
+        <label for="name1">Name</label>
+        <input type="text" id="name1" [(ngModel)]="userData.name" #name="ngModel" name="name1" minlength="3" required>
+        <div *ngIf="name.errors">
+            <small [style.color]="'red'" *ngIf="name.errors.required && name.touched">Name is required</small>
+            <small [style.color]="'red'" *ngIf="name.errors.minlength && name.touched">Minimum 3 characters are required</small>
+        </div>
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" #phone="ngModel" [(ngModel)]="userData.phone" maxlength="10" required pattern="^[789][\d]{9}$">
+        <div *ngIf="phone.errors">
+            <small [style.color]="'red'" *ngIf="phone.errors.pattern && phone.touched">Enter valid phone number</small>
+            <small [style.color]="'red'" *ngIf="phone.errors.required && phone.touched">Enter phone number</small>
+        </div>
+    </div>
+    <div>
+        <label >Email</label>
+        <input type="email" #email="ngModel" [(ngModel)]="userData.email" name="email">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" #key="ngModel"  [(ngModel)]="userData.password" name="passkey">
+    </div>
+    <button [disabled]="myForm.invalid">Submit</button>
+    <button type="button">Cancel</button>
+    <button type="reset">Reset</button>
+</form>

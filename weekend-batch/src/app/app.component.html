@@ -19,7 +19,7 @@
 
 <!-- Two-way binding -->
 <br><br>
-<input type="text" [(ngModel)]="valueFromInput" placeholder="value">
+<input type="text" [(ngModel)]="valueFromInput" placeholder="value"> {{valueFromInput}}
 
 <!-- End of two-way binding -->
 
@@ -60,3 +60,6 @@
   <div *ngSwitchCase = "'My application'">My App</div>
   <div *ngSwitchDefault>Default</div>
 </div>
+
+
+<app-header [name]="valueFromInput" (outputevent)="receiveInputFromChild($event)"></app-header>
