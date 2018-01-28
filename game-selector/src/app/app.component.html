@@ -1,0 +1,35 @@
+<h1 style="text-align:center">{{title}}</h1>
+<!-- [ngClass]="{'class':condition}" -->
+<h3 [ngClass]="{'initial':selectedGame, 'selected': !selectedGame}">Selected Game: {{selectedGame?selectedGame.gameName:'---'}}</h3>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4" *ngFor="let game of games" (click)="selectedGame = game; openModal(playersBlock)">
+    <div class="card">
+      <div class="card-header">{{game.gameName}}</div>
+        <img class="card-img-top" [src]="game.img">
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #playersBlock>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Players of {{selectedGame.gameName}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Player Name</th>
+      </tr>
+      <tr *ngFor="let player of selectedGame.players; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{player}}</td>
+      </tr>
+    </table>
+  </div>
+</ng-template>

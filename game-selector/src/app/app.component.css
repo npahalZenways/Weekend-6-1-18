@@ -1,0 +1,16 @@
+.initial{
+    color: orange;
+    text-align:center;
+}
+.selected{
+    color: blue;
+    text-align:center;
+}
+.border{
+    border: 1px solid black;
+}
+.equal{
+    display: inline-block;
+    width: 30%;
+    padding: 10px
+}
