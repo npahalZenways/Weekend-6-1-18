@@ -1,0 +1,41 @@
+<p>User is logged in</p>
+
+<p>
+    my birthday : {{ birthday | date:'mediumDate' | lowercase }}
+</p> 
+<p>
+    <!-- decimal pipe : {{minimum digits before decimal}}.{{minimum digits after decimal}} - {{maximum digits after decimal}} -->
+    {{num | number:'3.3-6'}}
+</p>
+
+<input type="radio" name="gender" (click)="color = 'blue'"> Male
+<input type="radio" name="gender" (click)="color = 'yellow'"> Female
+
+<p my-directive [color]="color">
+    {{ num | currency: 'GBP' :'symbol-narrow': '3.3-6'}}
+</p>
+
+<!-- <p>
+    {{myStr | change}}
+</p> -->
+
+<div>
+    <input type="text" [(ngModel)]="fullname" (ngModelChange)="firstname = splitfirst($event); lastname = splitlast($event)">
+    <!-- <button (click)="split(myname.value)">Split</button> -->
+</div>
+<div>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+        <tr *ngFor="let obj of myArray | search:fullname; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.marks}}</td>
+        </tr>
+    </table>
+</div>
+<!-- <p>First name: {{firstname}}, Last name: {{lastname}}</p> -->
+<button class="btn" (click)="logout()">Logout</button>

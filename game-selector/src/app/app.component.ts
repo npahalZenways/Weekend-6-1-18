@@ -10,7 +10,9 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 export class AppComponent {
   modalRef: BsModalRef;
   title = 'My Game Selector';
-  selectedGame: string;
+  selectedGame = {
+    gameName: ''
+  };
   games = [{
     img: 'https://i.pinimg.com/originals/de/61/7e/de617e9e7757a074e8a04aa9894e5aa0.jpg',
     gameName: 'Football',
