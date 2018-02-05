@@ -6,13 +6,13 @@ import { Router } from "@angular/router";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class myHome implements OnInit {
   //dependency injection
   constructor(private myRouter: Router) { }
   gotogame(){
     this.myRouter.navigate(['/newgame'])
   }
-  ngOnInit() {
-  }
+  ngOnInit(){
 
+  }
 }
